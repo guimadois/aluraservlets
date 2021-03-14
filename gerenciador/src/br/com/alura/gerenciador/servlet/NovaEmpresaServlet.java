@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.alura.gerenciador.servlet.model.Banco;
+import br.com.alura.gerenciador.servlet.model.Empresa;
+
 /**
  * Servlet implementation class NovaEmpresaServlet
  */
@@ -23,6 +26,12 @@ public class NovaEmpresaServlet extends HttpServlet {
 		System.out.println(">>> cadastro nova empresa");
 		
 		String nomeEmpresa = request.getParameter("nomeEmpresa");
+		
+		Empresa empresa = new Empresa(nomeEmpresa);
+		
+		Banco banco = new Banco();
+		
+		banco.adicionaBanco(empresa);
 		
 		PrintWriter out = response.getWriter();
 		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso</body></html>");
