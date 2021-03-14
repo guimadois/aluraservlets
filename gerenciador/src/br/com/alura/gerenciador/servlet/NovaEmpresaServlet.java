@@ -22,7 +22,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(">>> cadastro nova empresa");
 		
-		String nomeEmpresa = request.getParameter("nome");
+		String nomeEmpresa = request.getParameter("nomeEmpresa");
 		
 		PrintWriter out = response.getWriter();
 		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso</body></html>");
