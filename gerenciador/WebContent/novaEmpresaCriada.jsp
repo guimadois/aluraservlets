@@ -4,14 +4,14 @@
 	    	 
 %>
 <% 
-   String nomeEmpresa = "Google";
-   System.out.println("Scriptlet: " + nomeEmpresa);
+   String nomeEmpresa = (String) request.getAttribute("nomeEmpresa");
+   System.out.println("Scriptlet, nova empresa: " + nomeEmpresa);
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Nova Empresa Criada</title>
+<title>Nova Empresa Criada: <%=nomeEmpresa %></title>
 </head>
 <body>
 		<!--  Empresa <% out.println(nomeEmpresa);%> cadastrada com sucesso! -->
